@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const handlers = require('./handlers/index.js');
-const loginHnadler = require('./handlers/login.js');
+const login = require('./handlers/login.js');
+const passenger = require('./handlers/passengerSignup.js');
+const driver = require('./handlers/driverSignup.js');
 
-router.get('/',handlers.home);
-router.get('/login',loginHnadler.login)
+router.post('/login',login)
+router.post('/passengerSignup',passenger)
+router.post('/driverSignup',driver)
 module.exports = router;
