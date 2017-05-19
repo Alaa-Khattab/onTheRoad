@@ -31,7 +31,7 @@ function createPassenger(data, cb) {
       data.phone], cb)
 }
 function createDriver(data, cb) {
-  const query = `INSERT INTO passengers (full_name,
+  const query = `INSERT INTO drivers (full_name,
     email,
     password,
     id_num,

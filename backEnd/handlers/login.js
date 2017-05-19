@@ -9,13 +9,13 @@ module.exports = function login  (req, res)  {
        if (error) {
          return res.status(500).send('Something broke!')
        }
-       if (result1.rows.lenght > 0 ){
+       if (result1.rowCount > 0 ){
          req.session.userId = result1.rows.user_id;
          res.json({
            msg:'Log in successfully',
            statusCode : 200
          })
-       }else if(result2.rows.lenght > 0 ){
+       }else if(result2.rowCount > 0 ){
          req.session.userId = result2.rows.user_id;
          res.json({
            msg:'Log in successfully',

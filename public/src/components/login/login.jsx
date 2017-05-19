@@ -13,7 +13,7 @@ class Login extends Component {
   }
 
   toggleShow() {
-    this.refs.login.classList.toggle('show');
+    this.refs.login.classList.toggle('show'); 
   }
 
   changeEmail(ev) {
