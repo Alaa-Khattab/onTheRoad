@@ -1,0 +1,124 @@
+@media (max-width: 991px) {
+  .filter-wrp .right, .filter-wrp .left {
+    float: none;
+  }
+  aside.sidebar, #content {
+    width: 100%;
+  }
+  aside.sidebar {
+    height: Calc(17vh - 24px);
+    padding: 20px 5px;
+  }
+  #content {
+    height: Calc(83vh - 23px)
+  }
+}
+
+@media (max-width: 767px) {
+  .filter input, .filter select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  table thead {
+    display: none;
+  }
+  table {
+    text-align: left;
+  }
+  table tbody tr td {
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  table tbody tr {
+    font-size: 0;
+  }
+  table tbody tr td:before {
+    font-weight: bold;
+    display: inline-block;
+    width: 50%;
+    font-size: 16px;
+  }
+  table tbody tr td span {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    font-size: 16px;
+  }
+  table tbody tr td:first-of-type:before {
+    content: 'Trip date: ';
+  }
+  table tbody tr td:nth-child(2):before {
+    content: 'Time: ';
+  }
+  table tbody tr td:nth-child(3):before {
+    content: 'From: ';
+  }
+  table tbody tr td:nth-child(4):before {
+    content: 'To: ';
+  }
+  table tbody tr td:nth-child(5):before {
+    content: 'Pick up point: ';
+  }
+  table tbody tr td:nth-child(6):before {
+    content: 'Pick up time: ';
+  }
+  table tbody tr td:nth-child(7):before {
+    content: 'Seats avialable: ';
+  }
+  table tbody tr td:nth-child(8):before {
+    content: 'Organization: ';
+  }
+  table tbody tr td:last-of-type:before {
+    content: 'Join trip: ';
+  }
+  #content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+  }
+  table tbody tr {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  header button:first-of-type {
+    margin-right: 10px;
+  }
+  aside.sidebar {
+    height: Calc(23vh - 24px);
+    padding: 18px 5px;
+  }
+  #content {
+    height: Calc(77vh - 23px)
+  }
+}
+
+@media (max-width: 380px) {
+  aside.sidebar {
+    height: Calc(26vh - 24px);
+    padding: 20px 5px;
+  }
+  #content {
+    height: Calc(74vh - 23px)
+  }
+}
+
+@media (max-width: 320px) {
+  aside.sidebar {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    height: Calc(28vh - 23px);
+  }
+  header button:first-of-type {
+    margin-right: 0px;
+  }
+  #content {
+    height: Calc(72vh - 23px)
+  }
+}
