@@ -10,8 +10,7 @@ app.use(cookieParser());
 
 app.use(router);
 dbutils.runMigrate((error) => {
-  if (error) 
-    throw error
+  if (error) throw error
     app.listen(
       3000,
       () =>
