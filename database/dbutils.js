@@ -6,14 +6,17 @@ function runMigrate(cb) {
   ${table.drivers}
   ${table.trip}
   ${table.usertrip}`
-  console.log('alaaaa');
   client.query(tables, cb);
 }
 function runQuery(query, data, cb) {
   client.query(query, data, cb)
 }
+function selectAll(query,cb){
+  client.query(query,cb)
+}
 
 module.exports = {
   runMigrate,
-  runQuery
+  runQuery,
+  selectAll
 }
