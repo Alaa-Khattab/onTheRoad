@@ -1,148 +1,73 @@
 import React, { Component } from 'react';
+import TheRides from './theRides.jsx';
+import MyRides from './myRides.jsx';
+import NewRide from './newRide.jsx';
+import LadysRides from './ladysRides.jsx';
 
 class HomePage extends Component {
-    render() {
-        return (
+  constructor(props) {
+    super(props);
+    this.state = {
+      showRides: true,
+      myRides: false,
+      newRide: false,
+      ladysRides: false
+    };
+    this._showRides = this._showRides.bind(this);
+    this._myRides = this._myRides.bind(this);
+    this._newRide = this._newRide.bind(this);
+    this._ladysRides = this._ladysRides.bind(this);
+  }
+  _showRides() {
+    this.setState({
+      showRides: true,
+      myRides: false,
+      newRide: false,
+      ladysRides: false
+    })
+  }
+
+  _myRides() {
+    this.setState({
+      showRides: false,
+      myRides: true,
+      newRide: false,
+      ladysRides: false
+    })
+  }
+  _newRide() {
+    this.setState({
+      showRides: false,
+      myRides: false,
+      newRide: true,
+      ladysRides: false
+    })
+  }
+  _ladysRides() {
+    this.setState({
+      showRides: false,
+      myRides: false,
+      newRide: false,
+      ladysRides: true
+    })
+  }
+    render(){
+      return (
+        <div>
+          <aside className="sidebar">
+            <button type="button" onClick={this._showRides}>Rides</button>
+            <button type="button" onClick={this._myRides}>My rides</button>
+            <button type="button" onClick={this._newRide}>Create ride</button>
+            <button type="button" onClick={this._ladysRides}>Ladys only</button>
+          </aside>
           <div id="content">
-            <div className="filter-wrp">
-              <div className="row">
-                <div className="left">
-                  <h2>Scheduled Trips</h2>
-                </div>
-                <div className="right">
-                  <form className="filter">
-                    <input type="date" name="date" />
-                    <select name="from">
-                    <option disabled="disabled" selected="selected">From</option>
-                    <option value="1">Jerusalem</option>
-                  </select>
-                    <select name="to">
-                      <option disabled="disabled" selected="selected">To</option>
-                      <option value="2">Erez</option>
-                    </select>
-                    <button type="button" name="button">search</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Trip date</th>
-                  <th>Time</th>
-                  <th>From</th>
-                  <th>To</th>
-                  <th>Pick up point</th>
-                  <th>Pick up time</th>
-                  <th>Seats avialable</th>
-                  <th>Organization</th>
-                  <th>Join trip</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><span>16/06/2015</span></td>
-                  <td><span>8:00</span></td>
-                  <td><span>Jerusalem</span></td>
-                  <td><span>Erez</span></td>
-                  <td><span>Remal</span></td>
-                  <td><span>14:30</span></td>
-                  <td><span>3</span></td>
-                  <td><span>Mercy Corps</span></td>
-                  <td><span><button type="button">Join trip</button></span></td>
-                </tr>
-                <tr>
-                  <td><span>16/06/2015</span></td>
-                  <td><span>8:00</span></td>
-                  <td><span>Jerusalem</span></td>
-                  <td><span>Erez</span></td>
-                  <td><span>Remal</span></td>
-                  <td><span>14:30</span></td>
-                  <td><span>3</span></td>
-                  <td><span>Mercy Corps</span></td>
-                  <td><span><button type="button">Join trip</button></span></td>
-                </tr>
-                <tr>
-                  <td><span>16/06/2015</span></td>
-                  <td><span>8:00</span></td>
-                  <td><span>Jerusalem</span></td>
-                  <td><span>Erez</span></td>
-                  <td><span>Remal</span></td>
-                  <td><span>14:30</span></td>
-                  <td><span>3</span></td>
-                  <td><span>Mercy Corps</span></td>
-                  <td><span><button type="button">Join trip</button></span></td>
-                </tr>
-                <tr>
-                  <td><span>16/06/2015</span></td>
-                  <td><span>8:00</span></td>
-                  <td><span>Jerusalem</span></td>
-                  <td><span>Erez</span></td>
-                  <td><span>Remal</span></td>
-                  <td><span>14:30</span></td>
-                  <td><span>3</span></td>
-                  <td><span>Mercy Corps</span></td>
-                  <td><span><button type="button">Join trip</button></span></td>
-                </tr>
-                <tr>
-                  <td><span>16/06/2015</span></td>
-                  <td><span>8:00</span></td>
-                  <td><span>Jerusalem</span></td>
-                  <td><span>Erez</span></td>
-                  <td><span>Remal</span></td>
-                  <td><span>14:30</span></td>
-                  <td><span>3</span></td>
-                  <td><span>Mercy Corps</span></td>
-                  <td><span><button type="button">Join trip</button></span></td>
-                </tr>
-                <tr>
-                  <td><span>16/06/2015</span></td>
-                  <td><span>8:00</span></td>
-                  <td><span>Jerusalem</span></td>
-                  <td><span>Erez</span></td>
-                  <td><span>Remal</span></td>
-                  <td><span>14:30</span></td>
-                  <td><span>3</span></td>
-                  <td><span>Mercy Corps</span></td>
-                  <td><span><button type="button">Join trip</button></span></td>
-                </tr>
-                <tr>
-                  <td><span>16/06/2015</span></td>
-                  <td><span>8:00</span></td>
-                  <td><span>Jerusalem</span></td>
-                  <td><span>Erez</span></td>
-                  <td><span>Remal</span></td>
-                  <td><span>14:30</span></td>
-                  <td><span>3</span></td>
-                  <td><span>Mercy Corps</span></td>
-                  <td><span><button type="button">Join trip</button></span></td>
-                </tr>
-                <tr>
-                  <td><span>16/06/2015</span></td>
-                  <td><span>8:00</span></td>
-                  <td><span>Jerusalem</span></td>
-                  <td><span>Erez</span></td>
-                  <td><span>Remal</span></td>
-                  <td><span>14:30</span></td>
-                  <td><span>3</span></td>
-                  <td><span>Mercy Corps</span></td>
-                  <td><span><button type="button">Join trip</button></span></td>
-                </tr>
-                <tr>
-                  <td><span>16/06/2015</span></td>
-                  <td><span>8:00</span></td>
-                  <td><span>Jerusalem</span></td>
-                  <td><span>Erez</span></td>
-                  <td><span>Remal</span></td>
-                  <td><span>14:30</span></td>
-                  <td><span>3</span></td>
-                  <td><span>Mercy Corps</span></td>
-                  <td><span><button type="button">Join trip</button></span></td>
-                </tr>
-              </tbody>
-            </table>
+            {this.state.showRides ? <TheRides /> : null}
+            {this.state.myRides ? <MyRides /> : null}
+            {this.state.newRide ? <NewRide /> : null}
+            {this.state.ladysRides ? <LadysRides /> : null}
           </div>
-        );
+        </div>
+      );
     }
 }
 

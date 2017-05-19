@@ -1,16 +1,28 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import Login from '../login/login.jsx';
+import Register from '../signup/signup.jsx';
 
-const Header = () => {
-  return(
-    <header>
-      <div className="left">
+class Header extends Component {
+  constructor(props){
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <header>
+          <div className="left">
+          </div>
+          <div className="right">
+            <Login />
+            <Register />
+          </div>
+        </header>
+
+
       </div>
-      <div className="right">
-        <button type="button" id="signup">Sign Up</button>
-        <button type="button" id="signin">Sign In</button>
-      </div>
-    </header>
-  );
+    );
+  }
 }
 
 export default Header;

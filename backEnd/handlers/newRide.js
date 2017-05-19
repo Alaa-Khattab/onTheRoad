@@ -1,5 +1,6 @@
 const ride = require('../../database/ridesHelpers.js');
 module.exports = function newRide (req, res){
+  console.log('req.body: ',req.body);
   const data = Object.assign(req.body,{user_id:req.session.userId})
   ride.createRide(data,(err)=>{
     if(err){
