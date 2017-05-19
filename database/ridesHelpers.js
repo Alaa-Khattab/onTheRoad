@@ -36,7 +36,28 @@ function getLadyRides(cb){
 
 
 }
+function createRide (data,cb){
+  const query = `INSERT INTO trip (location_from_id,
+    location_to_id,
+    date,
+    pick_up_point,
+    pick_up_time,
+    available_seats,
+    price,
+    user_id) values ($1,$2,$3,$4,$5,$6,$7,$8);`;
+  dbutils.runQuery(query,[
+    data.location_from_id,
+    data.location_to_id,
+    data.date,
+    data.pick_up_time,
+    data.pick_up_point,
+    data.available_seats,
+    data.price,
+    data.user_id
+  ]);
+}
 module.exports={
   getRides,
-  getLadyRides
+  getLadyRides,
+  createRide
 }
