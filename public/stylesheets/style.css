@@ -135,7 +135,7 @@ input, select {
   transform: translate(-50%, -50%);
 }
 
-.module input[type=text], .module input[type=email], .module input[type=password], .module select {
+.module input, .module select {
   display: block;
   width: 100%;
   margin-bottom: 15px;
@@ -149,10 +149,6 @@ input, select {
   height: auto;
   position: relative;
   top: 2px;
-}
-
-.module * {
-  color: #fff;
 }
 
 .btn-wrp {
@@ -181,4 +177,34 @@ input, select {
 
 .module-wrp .module{
   z-index: 99999;
+}
+
+
+/************ trip-create ************/
+
+.trip-create {
+  padding-top: 20px;
+}
+
+.trip-create .form {
+  padding-bottom: 20px;
+}
+
+.trip-create .form .form-group {
+  font-size: 0;
+}
+
+.trip-create .form .form-group label {
+  width: 50%;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.trip-create .form .form-group input, .trip-create .form .form-group select {
+  width: 50%;
+  display: inline-block;
+}
+
+.trip-create .form button.btn-default {
+  margin-left: 10px;
 }
