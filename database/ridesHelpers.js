@@ -54,7 +54,7 @@ function createRide (data,cb){
     data.available_seats,
     data.price,
     data.user_id
-  ]);
+  ],cb);
 }
 module.exports={
   getRides,

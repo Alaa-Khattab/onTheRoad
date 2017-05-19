@@ -1,6 +1,6 @@
 const user = require('../../database/userHelpers.js');
 module.exports = function passengerSignup (req, res){
-  console.log('req.body: ',req.body);
+  console.log('req.body: ',req);
   user.createPassenger(req.body,(err)=>{
     if(err){
       res.json({

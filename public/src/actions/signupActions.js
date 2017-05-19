@@ -5,7 +5,11 @@ const register = (data) => {
   fetch('/passengerSignup', {
       method: 'POST',
       body: JSON.stringify(data),
-      credentials: 'include'
+      credentials: 'include',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }      
     })
     .then((response) => {
       return response.json()

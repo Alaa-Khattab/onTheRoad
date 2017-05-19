@@ -7,7 +7,11 @@ const NewRide = (data)=>{
   fetch('/newRide',{
     method: 'POST',
     body:JSON.stringify(data),
-    credentials: 'include'
+    credentials: 'include',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }    
   })
   .then((response)=>{
     console.log('response: ',response);
