@@ -1,8 +1,160 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: #000000;
+  padding: 5px 50px;
+  border-bottom: 1px solid #eee;
+}
+
+header:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+button {
+  background-color: #351c75;
+  border: 0;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+header button:first-of-type {
+  margin-right: 20px;
+}
+
+.row:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+aside.sidebar {
+  float: left;
+  width: 25%;
+  background-color: #000;
+  height: calc(100vh - 45px);
+  padding: 100px 5px;
+}
+
+#content {
+  float: left;
+  width: 75%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 50px;
+  height: Calc(100vh - 45px);
+  overflow: scroll;
+}
+
+aside.sidebar button {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  padding: 5px 20px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table button {
+  padding: 5px 10px;
+}
+
+.filter-wrp button {
+  padding: 8px 15px;
+}
+
+table thead th {
+  background-color: #ccc;
+}
+
+table tbody tr td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+
+.filter-wrp {
+  border-bottom: 5px solid #878787;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.filter-wrp h2 {
+  margin: 0;
+  line-height: 35px;
+}
+
+input, select {
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.module {
+  background-color: #000;
+  border-radius: 5px;
+  padding: 35px 20px 30px;
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.module input[type=text], .module input[type=email], .module input[type=password], .module select {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.module .radio-wrp {
+  margin-bottom: 15px;
+}
+
+.module .radio-wrp input[type=radio] {
+  height: auto;
+  position: relative;
+  top: 2px;
+}
+
+.module * {
+  color: #fff;
+}
+
+.btn-wrp {
+  text-align: center;
 }
