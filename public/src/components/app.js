@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import CommentBox from './comment_box';
-import CommentList from './comment_list';
-
+import Header from './templates/header.jsx';
+import SideBar from './templates/sidebar.jsx';
+import HomePage from './homePage/home_page.jsx'
 export default class App extends Component {
   render() {
     return (
       <div>
-        <CommentBox />
-        <CommentList />
+        <Header />
+        <div class="row">
+          <SideBar />
+          <HomePage />
+        </div>
       </div>
     );
   }

@@ -1,5 +1,6 @@
+const path = require('path');
  function home (req, res)  {
-  res.end('alaaaaa');
+  res.sendFile('index.html');
 }
 module.exports={
   home
