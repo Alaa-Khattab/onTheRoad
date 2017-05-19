@@ -11,8 +11,12 @@ function runMigrate(cb) {
 function runQuery(query, data, cb) {
   client.query(query, data, cb)
 }
+function selectAll(query,cb){
+  client.query(query,cb)
+}
 
 module.exports = {
   runMigrate,
-  runQuery
+  runQuery,
+  selectAll
 }

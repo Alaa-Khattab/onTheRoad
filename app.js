@@ -9,13 +9,14 @@ const router = require('./backEnd/router.js');
 const app = express();
 
 
-// app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public/src')));
 app.use(express.static(path.join(__dirname, 'public/js')));
 app.use(express.static(path.join(__dirname, 'public/stylesheets')));
+app.use(bodyParser())
 app.use(cookieParser());
 app.use(expressSession({secret:process.env.SECRET}));
 app.use(router);
+
 dbutils.runMigrate((error) => {
   if (error)  throw error
     app.listen(
