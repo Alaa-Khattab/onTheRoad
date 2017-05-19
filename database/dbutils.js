@@ -6,7 +6,6 @@ function runMigrate(cb) {
   ${table.drivers}
   ${table.trip}
   ${table.usertrip}`
-  console.log('alaaaa');
   client.query(tables, cb);
 }
 function runQuery(query, data, cb) {
