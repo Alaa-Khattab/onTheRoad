@@ -5,7 +5,7 @@ module.exports = function rides (req, res){
         res.status(500).send('Something broke!')
     }else{
       res.json({
-        msg:'Registered successfully',
+        msg:'Get data successfully',
         statusCode:200,
         data : result.rows
       })
