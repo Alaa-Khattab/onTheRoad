@@ -1,6 +1,6 @@
 const ride = require('../../database/ridesHelpers.js');
-module.exports = function rides (req, res){
-  ride.getRides((err,result)=>{
+module.exports = function ladyRides (req, res){
+  ride.getLadyRides((err,result)=>{
     if(err){
         res.status(500).send('Something broke!')
     }else{
