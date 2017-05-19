@@ -8,6 +8,7 @@ const passengers = `CREATE TABLE IF NOT EXISTS passengers (
     email varchar(100) UNIQUE,
     password varchar(255),
     id_num INT,
+    phone varchar(15),
     photo varchar(255),
     gender INT
   );`;
