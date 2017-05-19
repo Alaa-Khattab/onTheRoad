@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "server:watch": "nodemon -x 'npm start'"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
-    "express": "~4.15.2"
-
+    "express": "~4.15.2",
+    "pg": "^6.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
