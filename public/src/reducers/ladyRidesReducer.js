@@ -1,10 +1,10 @@
 import * as types from '../actions/types';
 
-function getRidesReducer(state = {}, action) {
+function LadyRidesReducer(state = {}, action) {
   switch (action.type) {
-  case types.FETCH_RIDES_SUCCESS:
+  case types.FETCH_LADY_RIDES:
     return action.payload;
-  case types.FETCH_RIDES_FAILURE:
+  case types.FETCH_LADY_RIDES_FAILURE:
     return state;
   default:
     return state;
@@ -12,5 +12,5 @@ function getRidesReducer(state = {}, action) {
 }
 
 export {
-  getRidesReducer
+  LadyRidesReducer
 };

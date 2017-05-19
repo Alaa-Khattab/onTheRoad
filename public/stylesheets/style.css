@@ -6,6 +6,19 @@ body {
   padding: 0;
   margin: 0;
 }
+.heading {
+  background-color: #f9f9f9;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+span.caption {
+  display: block;
+  color: #999999;
+  margin-bottom: 10px;
+}
 
 header {
   background-color: #000000;
@@ -203,8 +216,14 @@ input, select {
 .trip-create .form .form-group input, .trip-create .form .form-group select {
   width: 50%;
   display: inline-block;
+  margin-bottom: 15px;
 }
 
 .trip-create .form button.btn-default {
   margin-left: 10px;
+}
+
+.error{
+  color: red;
+  font-weight: bold;
 }

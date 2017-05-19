@@ -6,6 +6,10 @@ const Login = (data)=>{
   console.log('data: ',data);
   fetch('/login',{
     method: 'POST',
+    headers: {
+       'Accept': 'application/json, text/plain, */*',
+       'Content-Type': 'application/json'
+    },
     body:JSON.stringify(data),
     credentials: 'include'
   })

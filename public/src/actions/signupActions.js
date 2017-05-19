@@ -4,6 +4,10 @@ import store from '../store/store';
 const register = (data) => {
   fetch('/passengerSignup', {
       method: 'POST',
+      headers: {
+           'Accept': 'application/json, text/plain, */*',
+           'Content-Type': 'application/json'
+      },
       body: JSON.stringify(data),
       credentials: 'include'
     })

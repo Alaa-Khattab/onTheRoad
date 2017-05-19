@@ -107,6 +107,7 @@ class Register extends Component {
             </select>
           </div>
           <div className="btn-wrp">
+            <p className="error">{this.props.signup.msg}</p>
             <button
               type="button"
               onClick={this.onSignup.bind(this)}

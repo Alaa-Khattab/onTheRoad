@@ -58,6 +58,7 @@ class Login extends Component {
               onChange={this.changePassword.bind(this)}
               placeholder="Password" />
             <div className="btn-wrp">
+              <p className="error">{this.props.signin.msg}</p>
               <button
                 type="button"
                 action="submit"
