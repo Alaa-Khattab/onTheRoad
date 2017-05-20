@@ -12,6 +12,10 @@
   #content {
     height: Calc(79vh - 23px)
   }
+  .logo img {
+    width: 100px;
+    left: 10px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -91,11 +95,15 @@
     margin-right: 10px;
   }
   aside.sidebar {
-    height: Calc(29vh - 24px);
-    padding: 18px 5px;
+    height: Calc(39vh - 24px);
+    padding: 20px 5px;
   }
   #content {
-    height: Calc(71vh - 23px)
+    height: Calc(61vh - 23px)
+  }
+  aside.sidebar button {
+    margin-bottom: 22px;
+    margin-right: 29px;
   }
   .module, .regist-wrp {
     width: 100%;
@@ -104,11 +112,15 @@
 
 @media (max-width: 380px) {
   aside.sidebar {
-    height: Calc(32vh - 24px);
+    height: Calc(39vh - 24px);
     padding: 20px 5px;
   }
   #content {
-    height: Calc(68vh - 23px)
+    height: Calc(61vh - 23px)
+  }
+  aside.sidebar button {
+    margin-bottom: 11px;
+    margin-right: 16px;
   }
 }
 
@@ -116,12 +128,12 @@
   aside.sidebar {
     padding-top: 13px;
     padding-bottom: 13px;
-    height: Calc(35vh - 23px);
+    height: Calc(43vh - 23px);
   }
   header button:first-of-type {
     margin-right: 0px;
   }
   #content {
-    height: Calc(65vh - 23px)
+    height: Calc(57vh - 23px)
   }
 }

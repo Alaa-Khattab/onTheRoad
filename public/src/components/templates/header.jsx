@@ -22,7 +22,8 @@ class Header extends Component {
     return (
       <div>
         <header>
-          <div className="left">
+          <div className="left logo">
+            <img src='/logo.png'/>
           </div>
           <div className="right">
             <Login />
