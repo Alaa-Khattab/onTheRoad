@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 const ridesRow = ({rides}) =>{
-  if(!rides.data){
+  if(!rides.info){
     return <div>loading...</div>
   }
-  const theRides = rides.data.map((item) => {
+  const theRides = rides.info.map((item) => {
     console.log('myRidesItem: ',item);
     return(
       <tr key={item.trip_id}>
