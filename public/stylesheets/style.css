@@ -25,8 +25,7 @@ span.caption {
 
 header {
   background-color: #000000;
-  padding: 5px 50px;
-  border-bottom: 1px solid #eee;
+  padding: 25px 50px;
 }
 
 header:after {
@@ -68,7 +67,8 @@ aside.sidebar {
   width: 20%;
   background-color: #000;
   height: calc(100vh - 45px);
-  padding: 100px 5px;
+  padding: 60px 5px;
+  text-align: center;
 }
 
 #content {
@@ -82,13 +82,12 @@ aside.sidebar {
 }
 
 aside.sidebar button {
-  display: block;
-  width: 100%;
   margin-bottom: 5px;
-  font-size: 20px;
-  letter-spacing: 0.1em;
-  padding: 5px 20px;
+  padding: 0;
+  background-color: transparent;
+  margin-right: 5px;
 }
+
 
 table {
   width: 100%;
@@ -250,4 +249,11 @@ input, select {
 
 .regist-wrp .left button {
   width: 100%;
+}
+
+.logo img{
+  width: 140px;
+  position: absolute;
+  left: 60px;
+  top: 10px;
 }
