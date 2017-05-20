@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import signupAction  from '../../actions/signupActions';
+import signupdAction  from '../../actions/signupDriverActions';
 
-class Register extends Component {
+class RegisterDriver extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -11,7 +11,9 @@ class Register extends Component {
       password: '',
       id_num: 0,
       gender: 0,
-      phone: ''
+      phone: '',
+      car_num: '',
+      drivers_license_num: 0
     }
   }
 
@@ -39,6 +41,14 @@ class Register extends Component {
     this.setState({phone: ev.target.value});
   }
 
+  changeCarNum(ev){
+    this.setState({car_num: ev.target.value});
+  }
+
+  changeLicenseNum(ev){
+    this.setState({drivers_license_num: ev.target.value});
+  }
+
   toggleShow() {
     this.refs.register.classList.toggle('show');
   }
@@ -57,7 +67,7 @@ class Register extends Component {
     };
     return(
       <span>
-        <button type="button" id="signup" onClick={this.toggleShow.bind(this)}>Sign up as a passenger</button>
+        <button type="button" id="signup" onClick={this.toggleShow.bind(this)}>Sign up as driver</button>
         <div className="module-wrp" ref="register" style={style} >
           <div className="overlay"></div>
         <form className="rigester module" onSubmit={this.handleSubmit.bind(this)}>
@@ -109,13 +119,27 @@ class Register extends Component {
               <option value = "1">Female</option>
             </select>
           </div>
+          <input
+            type="number"
+            name="car_num"
+            value={this.state.car_num}
+            placeholder="Id Number"
+            onChange={this.changeCarNum.bind(this)}
+            />
+            <input
+              type="number"
+              name="drivers_license_num"
+              value={this.state.drivers_license_num}
+              placeholder="Id Number"
+              onChange={this.changeLicenseNum.bind(this)}
+              />
           <div className="btn-wrp">
             <p className="error">{this.props.signup.msg}</p>
             <button
               type="button"
               onClick={this.onSignup.bind(this)}
             >
-            Register
+            RegisterDriver
           </button>
           </div>
         </form>
@@ -126,21 +150,21 @@ class Register extends Component {
 }
 
 const mapStateToProps = (store) => {
-  console.log('signup: ',store.signup);
-  return { signup: store.signup }
+  console.log('driverSignup: ',store.driverSignup);
+  return { signup: store.driverSignup }
 }
 
 const mapDispatchToProps = () => {
   return {
     goSginup  : (data) => {
-      signupAction(data)
+      signupdAction(data)
     }
   }
 }
 
-const signUpcn = connect(
+const signUpcon = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Register)
+)(RegisterDriver)
 
-export default signUpcn;
+export default signUpcon;

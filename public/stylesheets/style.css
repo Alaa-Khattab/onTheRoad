@@ -6,6 +6,7 @@ body {
   padding: 0;
   margin: 0;
 }
+
 .heading {
   background-color: #f9f9f9;
   border-bottom: 2px solid #000000;
@@ -14,6 +15,7 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 span.caption {
   display: block;
   color: #999999;
@@ -137,15 +139,30 @@ input, select {
   border-radius: 4px;
 }
 
-.module {
+.module, .regist-wrp {
   background-color: #000;
   border-radius: 5px;
-  padding: 35px 20px 30px;
+  padding: 15px 20px 30px;
   width: 500px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.regist-wrp {
+  padding-top: 10px;
+}
+
+.close {
+  text-align: right;
+  padding-bottom: 10px;
+}
+
+.close span {
+  color: #fff;
+  cursor: pointer;
+
 }
 
 .module input, .module select {
@@ -154,31 +171,23 @@ input, select {
   margin-bottom: 15px;
 }
 
-.module .radio-wrp {
-  margin-bottom: 15px;
-}
-
-.module .radio-wrp input[type=radio] {
-  height: auto;
-  position: relative;
-  top: 2px;
-}
-
 .btn-wrp {
   text-align: center;
 }
 
-.show{
+.show {
   display: block!important;
 }
-.module-wrp{
+
+.module-wrp {
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
 }
-.module-wrp .overlay{
+
+.module-wrp .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -188,7 +197,7 @@ input, select {
   z-index: 999;
 }
 
-.module-wrp .module{
+.module-wrp .module {
   z-index: 99999;
 }
 
@@ -223,7 +232,14 @@ input, select {
   margin-left: 10px;
 }
 
-.error{
+.error {
   color: red;
   font-weight: bold;
+}
+.regist-wrp .left{
+  width: 50%;
+  text-align: center;
+}
+.regist-wrp .left:last-of-type{
+  border-left: 2px solid #fff; 
 }

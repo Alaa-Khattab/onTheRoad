@@ -45,6 +45,9 @@ class Login extends Component {
         <div className="module-wrp" ref="login" style={style}>
           <div className="overlay" onClick={this.toggleShow.bind(this)}></div>
           <form className="login module" onSubmit={this.handleSubmit.bind(this)}>
+            <div className="close">
+              <span onClick={this.toggleShow.bind(this)}>X</span>
+            </div>
             <input
               type="email"
               name="email"

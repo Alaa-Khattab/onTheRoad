@@ -5,14 +5,15 @@ import {signupReducer} from '../reducers/signupReducer.js';
 import {newRideReducer} from '../reducers/newRideReducer.js';
 import {LadyRidesReducer} from '../reducers/ladyRidesReducer.js';
 import {geLocationsReducer} from '../reducers/getLocationsReducer.js';
-
+import {signupDriverReducer} from '../reducers/signupDriverReducer.js';
 const reducers = combineReducers({
   signin: signinReducer,
   rides: getRidesReducer,
   signup: signupReducer,
   createRide: newRideReducer,
   ladyRides: LadyRidesReducer,
-  locations: geLocationsReducer
+  locations: geLocationsReducer,
+  driverSignup:signupDriverReducer
 });
 
 var store = createStore(
