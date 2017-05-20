@@ -185,7 +185,7 @@ class NewRide extends React.Component{
                       className='btn btn-success'
                       onClick={this.clickCreateRide.bind(this)}
                       >
-                      Add this trip
+                      Add this ride
                     </button>
                   </div>
                 </form>
