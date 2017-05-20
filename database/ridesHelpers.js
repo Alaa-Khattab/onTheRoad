@@ -10,6 +10,7 @@ function getRides(cb){
     trip.pick_up_point,
     trip.available_seats,
     trip.price,
+    trip.trip_id,
     location.location_name as location_from ,
     (select location_name from location where
  location_id=trip.location_to_id) as location_to
@@ -28,6 +29,7 @@ function getLadyRides(cb){
     trip.pick_up_point,
     trip.available_seats,
     trip.price,
+    trip.trip_id,
     location.location_name as location_from ,
     (select location_name from location where
  location_id=trip.location_to_id) as location_to
