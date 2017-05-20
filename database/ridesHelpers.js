@@ -56,8 +56,30 @@ function createRide (data,cb){
     data.user_id
   ],cb);
 }
+function getUserIdByTripId(data,cb) {
+  const query = `SELECT user_id,available_seats FROM trip WHERE trip_id=$1;`;
+  dbutils.runQuery(query,[data],cb)
+
+}
+function getUserIdByTripIdFromUserTrip(data,cb) {
+  const query = `SELECT user_id FROM usertrip WHERE trip_id=$1;`;
+  dbutils.runQuery(query,[data],cb)
+
+}
+function joinedRide(data,cb) {
+  const query = `INSERT INTO usertrip (user_id,trip_id) VALUES ($1,$2);`;
+  dbutils.runQuery(query,[data.user_id,data.trip_id],cb)
+}
+function updateSeats(data,cb) {
+  const query = `UPDATE trip SET available_seats=$1 WHERE trip_id=$2 ;`;
+  dbutils.runQuery(query,[data.available_seats,data.trip_id],cb)
+}
 module.exports={
   getRides,
   getLadyRides,
-  createRide
+  createRide,
+  getUserIdByTripId,
+  getUserIdByTripIdFromUserTrip,
+  joinedRide,
+  updateSeats
 }
