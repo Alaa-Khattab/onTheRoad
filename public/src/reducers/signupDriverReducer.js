@@ -1,10 +1,10 @@
 import * as types from '../actions/types';
 
-function getRidesReducer(state = {}, action) {
+function signupDriverReducer(state = {}, action) {
   switch (action.type) {
-  case types.FETCH_RIDES_SUCCESS:
+  case types.REGISTER_DRIVER:
     return action.payload;
-  case types.FETCH_RIDES_FAILURE:
+  case types.REGISTER_DRIVER_FAIL:
     return state;
   default:
     return state;
@@ -12,5 +12,5 @@ function getRidesReducer(state = {}, action) {
 }
 
 export {
-  getRidesReducer
+  signupDriverReducer
 };

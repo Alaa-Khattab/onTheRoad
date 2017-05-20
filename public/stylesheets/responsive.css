@@ -97,6 +97,9 @@
   #content {
     height: Calc(77vh - 23px)
   }
+  .module, .regist-wrp{
+    width: 100%;
+  }
 }
 
 @media (max-width: 380px) {
