@@ -15,8 +15,7 @@ const SelectLocations = ({options,value,change,label}) => {
     );
   });
   return (
-    <div className='form-group'>
-      <label>{label}</label>
+    <span>
       <select
         value={value}
         className='form-control'
@@ -29,7 +28,7 @@ const SelectLocations = ({options,value,change,label}) => {
         </option>
         {locationOptions}
       </select>
-    </div>
+    </span>
   )
 
 }

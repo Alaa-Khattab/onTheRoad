@@ -5,6 +5,7 @@ function getRides(cb){
     drivers.phone,
     drivers.car_num,
     drivers.gender,
+    trip.trip_id,
     trip.date,
     trip.pick_up_time,
     trip.pick_up_point,

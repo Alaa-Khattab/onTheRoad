@@ -10,6 +10,7 @@ const getLocations = () => {
     })
     .then(res => res.json())
     .then((response) => {
+      console.log('locationsssssssssss: ',response);
       store.dispatch({
         type: types.FETCH_LOCATIONS_SUCCESS,
         payload: response

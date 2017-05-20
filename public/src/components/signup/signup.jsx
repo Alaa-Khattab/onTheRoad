@@ -57,7 +57,7 @@ class Register extends Component {
     };
     return(
       <span>
-        <button type="button" id="signup" onClick={this.toggleShow.bind(this)}>Sign up as a passenger</button>
+        <button type="button" id="signup" onClick={this.toggleShow.bind(this)}>Passenger</button>
         <div className="module-wrp" ref="register" style={style} >
           <div className="overlay"></div>
         <form className="rigester module" onSubmit={this.handleSubmit.bind(this)}>
@@ -105,8 +105,8 @@ class Register extends Component {
               onChange={this.changeGender.bind(this)}
               >
               <option value = "" disabled>Gender</option>
-              <option value = "0">Male</option>
-              <option value = "1">Female</option>
+              <option value = "1">Male</option>
+              <option value = "0">Female</option>
             </select>
           </div>
           <div className="btn-wrp">

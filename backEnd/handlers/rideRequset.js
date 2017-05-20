@@ -1,6 +1,8 @@
 const ride = require('../../database/ridesHelpers.js');
 const user = require('../../database/userHelpers.js');
 module.exports = function rideRequset(req, res) {
+  console.log('req.body: ',req.body);
+  console.log('req.session.userId: ',req.session.userId);
   if (req.session.userId) {
     const tripId = req.body.trip_id
     const userId = req.session.userId

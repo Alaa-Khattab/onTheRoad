@@ -24,6 +24,9 @@ class NewRide extends React.Component{
     };
   }
 
+  componentWillMount(){
+    {this.props.Locations()}
+  }
 
   changeRideDate(ev) {
     this.setState({date: ev.target.value});
@@ -52,9 +55,15 @@ class NewRide extends React.Component{
   changeSeatsAvailable(ev) {
     this.setState({available_seats: ev.target.value});
   }
+
+  changePrice(ev) {
+    this.setState({price: ev.target.value});
+  }
+
   handleSubmit(event){
     event.preventDefault();
   }
+
   clickCreateRide(){
     message ='';
     type = 'spinningBubbles';
@@ -72,6 +81,7 @@ class NewRide extends React.Component{
       }
     )
   }
+
   render() {
     if(this.props.createRide.statusCode === 200){
       message=  'Your Ride Created Successfully';
@@ -112,21 +122,24 @@ class NewRide extends React.Component{
                       onChange={this.changeTime.bind(this)}
                       />
                   </div>
-
-                  <SelectLocations
-                    label='From'
-                    options={this.props.locations}
-                    value={this.state.location_from_id}
-                    change={this.changeLocationFrom.bind(this)}
+                  <div className='form-group'>
+                    <label>From</label>
+                    <SelectLocations
+                      label='From'
+                      options={this.props.locations}
+                      value={this.state.location_from_id}
+                      change={this.changeLocationFrom.bind(this)}
                     />
-
-                  <SelectLocations
-                    label='To'
-                    options={this.props.locations}
-                    value={this.state.location_to_id}
-                    change={this.changeLocationTo.bind(this)}
+                  </div>
+                  <div className='form-group'>
+                    <label>To</label>
+                    <SelectLocations
+                      label='To'
+                      options={this.props.locations}
+                      value={this.state.location_to_id}
+                      change={this.changeLocationTo.bind(this)}
                     />
-
+                  </div>
                   <div className='form-group'>
                     <label>Pickup point</label>
                     <input
@@ -155,8 +168,18 @@ class NewRide extends React.Component{
                       onChange={this.changeSeatsAvailable.bind(this)}
                       />
                   </div>
+                  <div className='form-group'>
+                    <label>Price</label>
+                    <input
+                      type='number'
+                      className='form-control'
+                      value={this.state.price}
+                      className='form-control'
+                      onChange={this.changePrice.bind(this)}
+                      />
+                  </div>
                   <div className='btn-wrp-right'>
-                    <p className='error'>{message}</p>
+                    <p className='error'>{this.props.createRide.msg}</p>
                     <button
                       type='submit'
                       className='btn btn-success'
@@ -176,6 +199,7 @@ class NewRide extends React.Component{
 }
 
 const mapStateToProps = (store) => {
+  console.log('store.createRide: ',store.createRide);
   return {
     locations: store.locations,
     createRide: store.createRide
