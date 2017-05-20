@@ -8,7 +8,7 @@ var path = require('path');
 const router = require('./backEnd/router.js');
 const app = express();
 
-app.use(bodyParser.json());
+
 app.use(express.static(path.join(__dirname, 'public/src')));
 app.use(express.static(path.join(__dirname, 'public/js')));
 app.use(express.static(path.join(__dirname, 'public/stylesheets')));
@@ -18,7 +18,8 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(cookieParser());
-app.use(expressSession({secret:process.env.SECRET}));
+app.use(bodyParser.json());
+app.use(expressSession({secret:process.env.SECRET,cookie:{maxAge:3 * 24 * 60 * 60 * 1000}}));
 app.use(router);
 dbutils.runMigrate((error) => {
   if (error)  throw error
