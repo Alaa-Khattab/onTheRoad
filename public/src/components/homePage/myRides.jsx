@@ -31,14 +31,13 @@ class MyRides extends Component{
             rides={this.props.myRides}
             />
         </table>
-        <p className="error">{this.props.myRides.msg}</p>
       </div>
     );
   }
 }
 
 const mapStateToProps = (store) => {
-  console.log('rides: ',store.myRides);
+  console.log('myRides: ',store.myRides);
   return {
     myRides: store.myRides
   }

@@ -5,6 +5,7 @@ const ridesRow = ({rides}) =>{
     return <div>loading...</div>
   }
   const theRides = rides.data.map((item) => {
+    console.log('myRidesItem: ',item);
     return(
       <tr key={item.trip_id}>
         <td><span>{item.full_name}</span></td>

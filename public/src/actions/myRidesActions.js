@@ -14,7 +14,7 @@ const getRides = () => {
     })
     .then(res => res.json())
     .then((response) => {
-      console.log('ridesResponse: ',response);
+      console.log('MyridesResponse: ',response);
         store.dispatch({type: types.FETCH_MYRIDES_SUCCESS, payload: response});
     }).catch((error) => {
       store.dispatch({
