@@ -7,7 +7,7 @@ const ridesRow = ({rides}) =>{
   const theRides = rides.data.map((item) => {
     console.log('myRidesItem: ',item);
     return(
-      <tr key={item.trip_id}>
+      <tr>
         <td><span>{item.full_name}</span></td>
         <td><span>{item.phone}</span></td>
         <td><span>{item.car_num}</span></td>

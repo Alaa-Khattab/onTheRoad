@@ -37,7 +37,7 @@ class MyRides extends Component{
 }
 
 const mapStateToProps = (store) => {
-  console.log('myRides: ',store.myRides);
+  console.log('myRidesStore: ',store.myRides);
   return {
     myRides: store.myRides
   }

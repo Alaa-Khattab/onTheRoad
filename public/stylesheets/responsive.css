@@ -12,6 +12,10 @@
   #content {
     height: Calc(79vh - 23px)
   }
+  .logo img {
+    width: 100px;
+    left: 10px;
+  }
 }
 
 @media (max-width: 767px) {
