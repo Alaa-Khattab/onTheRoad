@@ -41,7 +41,7 @@ module.exports = function rideRequset(req, res) {
                       if (err) {
                         return res.status(500).send('Something broke!')
                       }
-                      const seats = result1.rows.available_seats + 1;
+                      const seats = result1.rows.available_seats - 1;
                       ride.updateSeats({
                         trip_id: tripId,
                         available_seats: seats
