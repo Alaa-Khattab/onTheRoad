@@ -57,7 +57,7 @@ class Register extends Component {
     };
     return(
       <span>
-        <button type="button" id="signup" onClick={this.toggleShow.bind(this)}>Sign up as a passenger</button>
+        <button type="button" id="signup" onClick={this.toggleShow.bind(this)}>Passenger</button>
         <div className="module-wrp" ref="register" style={style} >
           <div className="overlay"></div>
         <form className="rigester module" onSubmit={this.handleSubmit.bind(this)}>

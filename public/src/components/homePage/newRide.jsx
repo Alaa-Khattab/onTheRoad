@@ -118,14 +118,14 @@ class NewRide extends React.Component{
                     options={this.props.locations}
                     value={this.state.location_from_id}
                     change={this.changeLocationFrom.bind(this)}
-                    />
+                  />
 
                   <SelectLocations
                     label='To'
                     options={this.props.locations}
                     value={this.state.location_to_id}
                     change={this.changeLocationTo.bind(this)}
-                    />
+                  />
 
                   <div className='form-group'>
                     <label>Pickup point</label>
