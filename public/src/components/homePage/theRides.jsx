@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import getTheRides  from '../../actions/getRidesActions';
 import { connect } from 'react-redux';
 import RidesRow from './theRidesRow.jsx';
+import getLocations from '../../actions/getLocationsActions';
+import joinRide from '../../actions/joinRideActions';
+import SelectLocations from './SelectLocations.jsx';
 
 class TheRides extends Component {
   constructor(props){
@@ -10,6 +13,7 @@ class TheRides extends Component {
 
   componentWillMount(){
     {this.props.getRides()}
+    {this.props.Locations()}
   }
 
   render(){
@@ -23,14 +27,14 @@ class TheRides extends Component {
           <div className="right">
             <form className="filter">
               <input type="date" name="date" />
-              <select name="from">
-              <option disabled="disabled" selected="selected">From</option>
-              <option value="1">Rafah</option>
-            </select>
-              <select name="to">
-                <option disabled="disabled" selected="selected">To</option>
-                <option value="2">Gaza</option>
-              </select>
+                <SelectLocations
+                  label='From'
+                  options={this.props.locations}
+                />
+                <SelectLocations
+                  label='To'
+                  options={this.props.locations}
+                />
               <button type="button" name="button">search</button>
             </form>
           </div>
@@ -52,21 +56,35 @@ class TheRides extends Component {
             <th>Join trip</th>
           </tr>
         </thead>
-        <RidesRow rides={this.props.Rides} />
+        <RidesRow
+          rides={this.props.Rides}
+          joinRide={data => this.props.JoinRide(data)}
+          />
       </table>
+      <p className="error">{this.props.JoinRideMsg.msg}</p>
       </div>
     );
   }
 }
 const mapStateToProps = (store) => {
   console.log('rides: ',store.rides);
-  return { Rides: store.rides }
+  return {
+    locations: store.locations,
+    Rides: store.rides,
+    JoinRideMsg: store.joinRide
+  }
 }
 
 const mapDispatchToProps = () => {
   return {
     getRides  : () => {
       getTheRides()
+    },
+    Locations: ()=>{
+      getLocations();
+    },
+    JoinRide: (data) => {
+      joinRide(data);
     }
   }
 }
