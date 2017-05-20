@@ -13,7 +13,8 @@ module.exports = function newRide (req, res){
 }
 else {
   res.json({
-    msg:'You should login before creating a ride'
+    msg:'You should login before creating a ride',
+    statusCode:401
   })
 }
 }

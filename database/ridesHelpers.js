@@ -71,8 +71,28 @@ function joinedRide(data,cb) {
   dbutils.runQuery(query,[data.user_id,data.trip_id],cb)
 }
 function updateSeats(data,cb) {
-  const query = `UPDATE trip SET available_seats=$1 WHERE trip_id=$2 ;`;
+  const query = `UPDATE trip SET available_seats=$1 WHERE trip_id=$2;`;
   dbutils.runQuery(query,[data.available_seats,data.trip_id],cb)
+}
+function getJoinedRides(data,cb) {
+  const query = `SELECT trip_id FROM usertrip WHERE user_id=$1;`;
+  dbutils.runQuery(query,[data],cb)
+}
+function getMyJoinedRides(data,cb) {
+  const query = `SELECT drivers.full_name,
+    drivers.phone,
+    drivers.car_num,
+    drivers.gender,
+    trip.date,
+    trip.pick_up_time,
+    trip.pick_up_point,
+    trip.available_seats,
+    trip.price,
+    location.location_name as location_from ,
+    (select location_name from location where
+  location_id=trip.location_to_id) as location_to
+  FROM trip , drivers,location where trip.location_from_id=location.location_id AND trip_id=$1;`;
+  dbutils.runQuery(query,[data],cb)
 }
 module.exports={
   getRides,
@@ -81,5 +101,7 @@ module.exports={
   getUserIdByTripId,
   getUserIdByTripIdFromUserTrip,
   joinedRide,
-  updateSeats
+  updateSeats,
+  getJoinedRides,
+  getMyJoinedRides
 }
