@@ -2,27 +2,23 @@ const ride = require('../../database/ridesHelpers.js');
 module.exports = function myRides(req, res) {
   if (req.session.userId) {
     const user_id = req.session.userId
+    console.log('hereeeee',user_id);
     ride.getJoinedRides(user_id, (err, result) => {
       if (err) {
         return res.status(500).send('Something broke!')
       }
+      console.log('result:',result.rows[0].trip_id);
+
       if (result.rowCount > 0) {
-        var data = []
-        result.rows.map((item) => {
-          ride.getMyJoinedRides(item.trip_id, (err, result1) => {
-            if(err) {
-              return res.status(500).send('Something broke!')
-            }
-            data = data.concat(result1.rows[0])
-            result.rowCount--;
-            if (result1.rowCount === 0) {
-              res.json({
-                msg: 'Get data successfully',
-                info: data
-              })
-            }
-          })
+
+        ride.getMyJoinedRides(result.rows[0].trip_id,(err,result2)=>{
+          console.log('result2.rows:',result2.rows);
+          res.json({
+                  msg: 'Get data successfully',
+                  info: result2.rows
+                })
         })
+      
       } else {
         res.json({
           msg: 'You are not joined to any ride',
