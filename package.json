@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node app.js",
     "server:watch": "nodemon -x 'npm start'",
+    "heroku-postbuild": "webpack -p --config webpack.config.js --progress",
     "watch": "webpack -w",
     "build": "webpack"
   },
