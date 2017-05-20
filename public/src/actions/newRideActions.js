@@ -11,7 +11,7 @@ const NewRide = (data)=>{
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
-    }    
+    }
   })
   .then((response)=>{
     console.log('response: ',response);

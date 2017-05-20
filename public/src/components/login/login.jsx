@@ -13,7 +13,7 @@ class Login extends Component {
   }
 
   toggleShow() {
-    this.refs.login.classList.toggle('show');
+    this.refs.login.classList.toggle('show'); 
   }
 
   changeEmail(ev) {
@@ -45,6 +45,9 @@ class Login extends Component {
         <div className="module-wrp" ref="login" style={style}>
           <div className="overlay" onClick={this.toggleShow.bind(this)}></div>
           <form className="login module" onSubmit={this.handleSubmit.bind(this)}>
+            <div className="close">
+              <span onClick={this.toggleShow.bind(this)}>X</span>
+            </div>
             <input
               type="email"
               name="email"
@@ -58,6 +61,7 @@ class Login extends Component {
               onChange={this.changePassword.bind(this)}
               placeholder="Password" />
             <div className="btn-wrp">
+              <p className="error">{this.props.signin.msg}</p>
               <button
                 type="button"
                 action="submit"

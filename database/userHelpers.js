@@ -31,7 +31,7 @@ function createPassenger(data, cb) {
       data.phone], cb)
 }
 function createDriver(data, cb) {
-  const query = `INSERT INTO passengers (full_name,
+  const query = `INSERT INTO drivers (full_name,
     email,
     password,
     id_num,
@@ -49,9 +49,14 @@ function createDriver(data, cb) {
       data.car_num,
       data.drivers_license_num], cb)
 }
+function getGender(data,cb) {
+  const query = `SELECT gender FROM drivers WHERE user_id=$1;`;
+  dbutils.runQuery(query,[data],cb)
+}
 module.exports = {
   getUserByEmailFromPassenger,
   getUserByEmailFromDriver,
   createPassenger,
+  getGender,
   createDriver
 }

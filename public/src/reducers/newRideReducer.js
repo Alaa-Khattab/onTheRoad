@@ -1,6 +1,6 @@
 import * as types from '../actions/types';
 
-function newRideReducer(state = [], action) {
+function newRideReducer(state = {}, action) {
   switch (action.type) {
   case types.CREATE_RIDE:
     return action.payload;

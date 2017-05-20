@@ -6,9 +6,9 @@ class TheRides extends Component {
   constructor(props){
     super(props);
   }
-  
+
   componentWillMount(){
-    this.props.getRides()
+    {this.props.getRides()}
   }
 
   render(){

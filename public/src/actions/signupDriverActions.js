@@ -1,8 +1,8 @@
 import * as types from './types';
 import store from '../store/store';
 
-const register = (data) => {
-  fetch('/passengerSignup', {
+const registerDriver = (data) => {
+  fetch('/driverSignup', {
       method: 'POST',
       body: JSON.stringify(data),
       credentials: 'include',
@@ -16,14 +16,14 @@ const register = (data) => {
     })
     .then((response) => {
       store.dispatch({
-        type: types.REGISTER_USER,
+        type: types.REGISTER_DRIVER,
         payload: response
       })
     }).catch((error) => {
       store.dispatch({
-        type: types.REGISTER_USER_FAIL
+        type: types.REGISTER_DRIVER_FAIL
       })
     })
 }
 
-export default register;
+export default registerDriver;

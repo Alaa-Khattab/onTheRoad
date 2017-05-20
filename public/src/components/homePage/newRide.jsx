@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import  createRide  from '../../actions/newRideActions.js';
 import { connect } from 'react-redux';
+import getLocations from '../../actions/getLocationsActions';
+import SelectLocations from './SelectLocations.jsx';
 
 var type='';
 var message ='';
@@ -111,29 +113,19 @@ class NewRide extends React.Component{
                       />
                   </div>
 
-                  <div className='form-group'>
-                    <label>From</label>
-                    <select
-                      name="from"
-                      value={this.state.location_from_id}
-                      onChange={this.changeLocationFrom.bind(this)}
-                      >
-                      <option disabled="disabled" selected="selected">From</option>
-                      <option value="1">Jerusalem</option>
-                    </select>
-                  </div>
+                  <SelectLocations
+                    label='From'
+                    options={this.props.locations}
+                    value={this.state.location_from_id}
+                    change={this.changeLocationFrom.bind(this)}
+                    />
 
-                  <div className='form-group'>
-                    <label>To</label>
-                    <select
-                      name="to"
-                      value={this.state.location_to_id}
-                      onChange={this.changeLocationTo.bind(this)}
-                      >
-                      <option disabled="disabled" selected="selected">To</option>
-                      <option value="2">Erez</option>
-                    </select>
-                  </div>
+                  <SelectLocations
+                    label='To'
+                    options={this.props.locations}
+                    value={this.state.location_to_id}
+                    change={this.changeLocationTo.bind(this)}
+                    />
 
                   <div className='form-group'>
                     <label>Pickup point</label>
@@ -185,6 +177,7 @@ class NewRide extends React.Component{
 
 const mapStateToProps = (store) => {
   return {
+    locations: store.locations,
     createRide: store.createRide
   }
 }
@@ -192,6 +185,9 @@ const mapDispatchToProps = () => {
   return {
     RidesCreation  : (data) => {
       createRide(data)
+    },
+    Locations: ()=>{
+      getLocations();
     }
   }
 }

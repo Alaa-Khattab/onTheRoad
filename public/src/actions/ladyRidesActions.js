@@ -2,9 +2,9 @@
 import * as types from './types';
 import store from '../store/store';
 
-const getRides = () => {
+const getLadyRides = () => {
 
-  fetch('/rides', {
+  fetch('/ladyRides', {
       method: 'GET',
       headers: {
          'Accept': 'application/json, text/plain, */*',
@@ -14,14 +14,14 @@ const getRides = () => {
     })
     .then(res => res.json())
     .then((response) => {
-      console.log('ridesResponse: ',response);
-        store.dispatch({type: types.FETCH_RIDES_SUCCESS, payload: response});
+      console.log('LadyRidesResponse: ',response);
+        store.dispatch({type: types.FETCH_LADY_RIDES, payload: response});
     }).catch((error) => {
       store.dispatch({
-        type: types.FETCH_RIDES_FAILURE
+        type: types.FETCH_LADY_RIDES_FAILURE
       })
     })
 
 };
 
-export default getRides;
+export default getLadyRides;
