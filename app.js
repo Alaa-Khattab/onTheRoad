@@ -25,7 +25,7 @@ app.use(router);
 dbutils.runMigrate((error) => {
   if (error)  throw error
     app.listen(
-      3000,
+      process.env.PORT || 3000,
       () =>
       console.log(`Server is listening on port:`, 3000)
     );
