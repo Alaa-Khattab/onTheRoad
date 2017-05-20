@@ -4,6 +4,7 @@ module.exports = function ladyRides(req, res) {
     if (err) {
       return res.status(500).send('Something broke!')
     }
+    console.log('alaaaaa',result.rows);
     res.json({
       msg: 'Get data successfully',
       statusCode: 200,

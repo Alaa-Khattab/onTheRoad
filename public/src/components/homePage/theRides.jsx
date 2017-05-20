@@ -7,6 +7,7 @@ import joinRide from '../../actions/joinRideActions';
 import SelectLocations from './SelectLocations.jsx';
 
 class TheRides extends Component {
+
   constructor(props){
     super(props);
   }

@@ -15,7 +15,8 @@ function getRides(cb){
     location.location_name as location_from ,
     (select location_name from location where
  location_id=trip.location_to_id) as location_to
- FROM trip , drivers,location where trip.location_from_id=location.location_id;`;
+ FROM trip , drivers,location where trip.location_from_id=location.location_id AND
+ trip.user_id=drivers.user_id;`;
   dbutils.selectAll(query,cb)
 
 
@@ -34,7 +35,8 @@ function getLadyRides(cb){
     location.location_name as location_from ,
     (select location_name from location where
  location_id=trip.location_to_id) as location_to
- FROM trip , drivers,location where trip.location_from_id=location.location_id AND gender=0;`;
+ FROM trip , drivers,location where trip.location_from_id=location.location_id AND drivers.gender=0 AND
+ trip.user_id=drivers.user_id;;`;
   dbutils.selectAll(query,cb)
 
 
@@ -70,6 +72,8 @@ function getUserIdByTripIdFromUserTrip(data,cb) {
 
 }
 function joinedRide(data,cb) {
+  console.log('databassse:',data.user_id);
+  console.log('asssssss:',data.trip_id);
   const query = `INSERT INTO usertrip (user_id,trip_id) VALUES ($1,$2);`;
   dbutils.runQuery(query,[data.user_id,data.trip_id],cb)
 }

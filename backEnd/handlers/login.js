@@ -1,5 +1,6 @@
 const user = require('../../database/userHelpers.js');
 module.exports = function login  (req, res)  {
+  console.log('reeeee:',req.body);
    const {email,password} = req.body;
    user.getUserByEmailFromPassenger(email,password,(err,result1 )=>{
      if (err) {
