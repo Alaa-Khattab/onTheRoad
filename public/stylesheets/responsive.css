@@ -6,11 +6,11 @@
     width: 100%;
   }
   aside.sidebar {
-    height: Calc(17vh - 24px);
+    height: Calc(21vh - 24px);
     padding: 20px 5px;
   }
   #content {
-    height: Calc(83vh - 23px)
+    height: Calc(79vh - 23px)
   }
 }
 
@@ -91,24 +91,24 @@
     margin-right: 10px;
   }
   aside.sidebar {
-    height: Calc(23vh - 24px);
+    height: Calc(29vh - 24px);
     padding: 18px 5px;
   }
   #content {
-    height: Calc(77vh - 23px)
+    height: Calc(71vh - 23px)
   }
-  .module, .regist-wrp{
+  .module, .regist-wrp {
     width: 100%;
   }
 }
 
 @media (max-width: 380px) {
   aside.sidebar {
-    height: Calc(26vh - 24px);
+    height: Calc(32vh - 24px);
     padding: 20px 5px;
   }
   #content {
-    height: Calc(74vh - 23px)
+    height: Calc(68vh - 23px)
   }
 }
 
@@ -116,12 +116,12 @@
   aside.sidebar {
     padding-top: 13px;
     padding-bottom: 13px;
-    height: Calc(28vh - 23px);
+    height: Calc(35vh - 23px);
   }
   header button:first-of-type {
     margin-right: 0px;
   }
   #content {
-    height: Calc(72vh - 23px)
+    height: Calc(65vh - 23px)
   }
 }

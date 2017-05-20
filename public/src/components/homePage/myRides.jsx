@@ -1,36 +1,58 @@
 import React, { Component } from 'react';
-
-const MyRides = () => {
-  return(
-    <table>
-      <thead>
-        <tr>
-          <th>Trip date</th>
-          <th>Time</th>
-          <th>From</th>
-          <th>To</th>
-          <th>Pick up point</th>
-          <th>Pick up time</th>
-          <th>Seats avialable</th>
-          <th>Organization</th>
-          <th>Join trip</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span>16/06/2015</span></td>
-          <td><span>8:00</span></td>
-          <td><span>Jerusalem</span></td>
-          <td><span>Erez</span></td>
-          <td><span>Remal</span></td>
-          <td><span>14:30</span></td>
-          <td><span>3</span></td>
-          <td><span>Mercy Corps</span></td>
-          <td><span><button type="button">Join trip</button></span></td>
-        </tr>
-      </tbody>
-    </table>
-  );
+import getTheRides from '../../actions/myRidesActions';
+import MyRidesRow from './myRidesRow.jsx';
+import { connect } from 'react-redux';
+class MyRides extends Component{
+  constructor(props){
+    super(props);
+  }
+  componentWillMount(){
+    {this.props.getMyRides()}
+  }
+  render(){
+    return(
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Phone no.</th>
+              <th>Car no.</th>
+              <th>Date</th>
+              <th>Pick up time</th>
+              <th>Pick up point</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Seats avialable</th>
+              <th>price</th>
+            </tr>
+          </thead>
+          <MyRidesRow
+            rides={this.props.myRides}
+            />
+        </table>
+      </div>
+    );
+  }
 }
 
-export default MyRides;
+const mapStateToProps = (store) => {
+  console.log('myRides: ',store.myRides);
+  return {
+    myRides: store.myRides
+  }
+}
+
+const mapDispatchToProps = () => {
+  return {
+    getMyRides  : () => {
+      getTheRides()
+    }
+  }
+}
+
+const MyRidesCom = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyRides)
+export default MyRidesCom;

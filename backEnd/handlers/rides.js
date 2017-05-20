@@ -4,6 +4,7 @@ module.exports = function rides(req, res) {
     if (err) {
       return res.status(500).send('Something broke!')
     }
+  
     res.json({
       msg: 'Get data successfully',
       statusCode: 200,

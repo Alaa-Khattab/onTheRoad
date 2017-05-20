@@ -49,14 +49,21 @@ function createDriver(data, cb) {
       data.car_num,
       data.drivers_license_num], cb)
 }
-function getGender(data,cb) {
+function getGenderDriver(data,cb) {
+  console.log('data in get gender:',data);
   const query = `SELECT gender FROM drivers WHERE user_id=$1;`;
+  dbutils.runQuery(query,[data],cb)
+}
+function getGenderPassenger(data,cb) {
+  console.log('data in :',data);
+  const query = `SELECT gender FROM passengers WHERE user_id=$1;`;
   dbutils.runQuery(query,[data],cb)
 }
 module.exports = {
   getUserByEmailFromPassenger,
   getUserByEmailFromDriver,
   createPassenger,
-  getGender,
-  createDriver
+  getGenderDriver,
+  createDriver,
+  getGenderPassenger
 }

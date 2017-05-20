@@ -1,7 +1,7 @@
 const user = require('../../database/userHelpers.js');
 module.exports = function login  (req, res)  {
+  console.log('reeeee:',req.body);
    const {email,password} = req.body;
-   console.log('req.body:',req.body);
    user.getUserByEmailFromPassenger(email,password,(err,result1 )=>{
      if (err) {
        return res.status(500).send('Something broke!')
@@ -10,14 +10,14 @@ module.exports = function login  (req, res)  {
        if (error) {
          return res.status(500).send('Something broke!')
        }
-       if (result2.rowCount > 0 ){
-         req.session.userId = result2.rows[0].user_id;
+       if (result1.rowCount > 0 ){
+         req.session.userId = result1.rows[0].user_id;
          res.json({
            msg:'Log in successfully',
            statusCode : 200
          })
        }else if(result2.rowCount > 0 ){
-         req.session.userId = result2.rows.user_id;
+         req.session.userId = result2.rows[0].user_id;
          res.json({
            msg:'Log in successfully',
            statusCode : 200
