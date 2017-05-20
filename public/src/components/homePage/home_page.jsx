@@ -55,10 +55,10 @@ class HomePage extends Component {
       return (
         <div>
           <aside className="sidebar">
-            <button type="button" onClick={this._showRides}>Rides</button>
-            <button type="button" onClick={this._myRides}>My rides</button>
-            <button type="button" onClick={this._newRide}>Create ride</button>
-            <button type="button" onClick={this._ladysRides}>Ladys only</button>
+            <button type="button" onClick={this._showRides}><img src='/22.png' /></button>
+            <button type="button" onClick={this._myRides}><img src='/33.png' /></button>
+            <button type="button" onClick={this._newRide}><img src='/44.png' /></button>
+            <button type="button" onClick={this._ladysRides}><img src='/11.png' /></button>
           </aside>
           <div id="content">
             {this.state.showRides ? <TheRides /> : null}
